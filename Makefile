@@ -6,4 +6,6 @@ default:
 	@chmod 775 access.log
 
 reset:
-	@echo "" > access.log
+	@rm access.log
+	@touch access.log
+	@chmod 775 access.log
