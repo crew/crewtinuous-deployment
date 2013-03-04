@@ -2,5 +2,6 @@
 
 default:
 	@touch access.log
-	@sudo chown -R :www-data ./*
+	@sudo chown :www-data access.log
+	@chmod 775 access.log
 
