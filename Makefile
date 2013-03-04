@@ -5,3 +5,5 @@ default:
 	@sudo chown :www-data access.log
 	@chmod 775 access.log
 
+reset:
+	@echo "" > access.log
