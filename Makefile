@@ -2,9 +2,10 @@
 
 default:
 	@touch access.log
-	@sudo chown :www-data access.log
-	@chmod 775 access.log
+	@touch git.log
+	@sudo chown :www-data *.log
+	@chmod 775 *.log
 
 reset:
-	@rm access.log
+	@rm *.log
 	@make default
