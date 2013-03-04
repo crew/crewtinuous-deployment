@@ -9,3 +9,8 @@ default:
 reset:
 	@rm *.log
 	@make default
+
+packages:
+	@sudo apt-get install libyaml-dev php-pear php5-dev
+	@sudo pecl install yaml
+	@echo "MAKE SURE TO ADD 'extension=yaml.so' TO YOUR PHP.INI FILE!"
