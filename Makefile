@@ -7,5 +7,4 @@ default:
 
 reset:
 	@rm access.log
-	@touch access.log
-	@chmod 775 access.log
+	@make default
