@@ -1,16 +1,19 @@
 # Makefile for crewtinuous deployment. The only real thing this does is touch a log file and set permissions
 
-default:
-	@touch access.log
-	@touch git.log
-	@sudo chown :www-data *.log
-	@chmod 775 *.log
+default: setup
 
-reset:
-	@rm *.log
-	@make default
+setup: clean
+	touch access.log
+	touch git.log
+	@chown :www-data *.log
+
+clean:
+	rm *.log
 
 packages:
-	@sudo apt-get install libyaml-dev php-pear php5-dev
-	@sudo pecl install yaml
+	@apt-get install libyaml-dev php-pear php5-dev
+	@pecl install yaml
+	@echo "installed yaml php deps"
 	@echo "MAKE SURE TO ADD 'extension=yaml.so' TO YOUR PHP.INI FILE!"
+
+install: packages setup
