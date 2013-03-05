@@ -6,7 +6,7 @@ setup: clean
 	touch access.log
 	touch git.log
 	@chown :www-data *.log
-	@chmod 754 *.log
+	@chmod 774 *.log
 
 clean:
 	rm -f *.log
