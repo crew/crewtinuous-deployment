@@ -1,5 +1,10 @@
 # Simple configuration for this.
 # Every repository to be updated should be something like this:
-# reponame: directory
+# <reponame>: 
+# 	directory: <dir>
+# 	[deploy: <cmd>]
+#
+# where <reponame> is the name of the repository in git
+#       <dir> is the directory where the repo is cloned
+#       <cmd> is the command to run in that repo after pull. omit this for no comand.
 # crewtinuous-development: /home/pranav/Projects/crewtinuous-development
-
