@@ -16,12 +16,17 @@ if(@($_POST['payload'] != NULL)){
   if($repos[$reponame] != NULL){
 
     # Get the directory the repo is in 
-    $dir = $repos[$reponame];
+    $repo = $repos[$reponame];
+    $dir = $repo["directory"];
+    $cmd = @$repo["deploy"];
+
     # Run the shell command
-    $res = `(cd $dir && git pull 2>&1)`;
+    $res = trim("git output: " . `(cd $dir && git pull 2>&1)`) . "; ";
+    if($cmd != NULL)
+      $res .= trim("deploy output: " . `(cd $dir && $cmd)`) . "; ";
 
     # Log the git result into the git log.
-    file_put_contents('git.log', "FOUND $reponame: $res\r\n", FILE_APPEND);
+    file_put_contents('git.log', "FOUND: $reponame; $res\r\n", FILE_APPEND);
   }
 }
 
