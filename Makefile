@@ -8,7 +8,7 @@ setup: clean
 	@chown :www-data *.log
 
 clean:
-	rm *.log
+	rm -f *.log
 
 packages:
 	@apt-get install libyaml-dev php-pear php5-dev
