@@ -2,3 +2,4 @@
 # Every repository to be updated should be something like this:
 # reponame: directory
 # crewtinuous-development: /home/pranav/Projects/crewtinuous-development
+resume: /var/www/resume

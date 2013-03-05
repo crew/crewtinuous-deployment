@@ -18,7 +18,7 @@ if(@($_POST['payload'] != NULL)){
     # Get the directory the repo is in 
     $dir = $repos[$reponame];
     # Run the shell command
-    $res = `cd $dir && git pull`;
+    $res = `(cd $dir && git pull 2>&1)`;
 
     # Log the git result into the git log.
     file_put_contents('git.log', "FOUND $reponame: $res\r\n", FILE_APPEND);
