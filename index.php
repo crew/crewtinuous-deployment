@@ -21,7 +21,7 @@ if(@($_POST['payload'] != NULL)){
     $cmd = @$repo["deploy"];
 
     # Run the shell command
-    $res = trim("git output: " . `(cd $dir && git pull 2>&1)`) . "; ";
+    $res = trim("git output: " . `(cd $dir && git fetch 2>&1 && git merge origin/master 2>&1)`) . "; ";
     if($cmd != NULL)
       $res .= trim("deploy output: " . `(cd $dir && $cmd)`) . "; ";
 
