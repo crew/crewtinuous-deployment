@@ -5,6 +5,8 @@ then point the Service Hook at that URL.
 
 ## Installation
 
+Note: This installation is for Ubuntu 12.04, you may need to find the relevant packages for your own OS.
+
 ```
 make
 make install
