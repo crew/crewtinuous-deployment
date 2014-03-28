@@ -1,19 +1,18 @@
 <?php
 require('lib.php');
 
-if(@($_POST['payload'] != NULL)){
+if(isset($_POST['payload'])){
   add_to_accesslog($_POST['payload']);
 
   # Decode that sucka!, since its just json
   $payload = json_decode($_POST['payload']);
 
   # Gets the name of the repository
-  $reponame = $payload->repository;
-  $reponame = $reponame->name;
+  $reponame = $payload->repository->name;
 
   # Get all the repositories stored in the config file
   $repos = get_repositories();
-  if($repos[$reponame] != NULL){
+  if(isset($repos[$reponame])){
 
     # Get the directory the repo is in 
     $repo = $repos[$reponame];
