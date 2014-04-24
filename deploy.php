@@ -30,5 +30,3 @@ if (isset($_REQUEST['key']) && $_REQUEST['key'] == '<insert random key here>') {
     }
   }
 }
-
-?>
