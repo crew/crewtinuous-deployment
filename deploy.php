@@ -1,8 +1,8 @@
 <?php
 require('lib.php');
+if (isset($_REQUEST['key']) && $_REQUEST['key'] == get_api_key()) {
+    if(isset($_POST['payload'])){
 
-if (isset($_REQUEST['key']) && $_REQUEST['key'] == '<insert random key here>') {
-  if(isset($_POST['payload'])){
     add_to_accesslog($_POST['payload']);
   
     # Decode that sucka!, since its just json

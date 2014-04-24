@@ -1,6 +1,7 @@
 # Simple configuration for this.
+
 # Every repository to be updated should be something like this:
-# <reponame>: 
+# <reponame>:
 # 	directory: <dir>
 # 	[deploy: <cmd>]
 #
@@ -9,7 +10,11 @@
 #       <cmd> is the command to run in that repo after pull. omit this for no comand.
 #
 # Example:
-#
-#
-# crewtinuous-deployment:
-#     directory: /var/www/crewtinuous
+
+access-key: <Enter Access Key Here>
+
+
+repositories:
+#    crewtinuous-deployment:
+#        directory: /var/www/crewtinuous
+#        deploy: echo "Done Deploying crewtinuous deployment"
