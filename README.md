@@ -21,6 +21,10 @@ The config.yaml file as documentation on the configuration format. One entry for
 ###Example config.yaml
 If you have a website located in /var/www/ and the repository name on github is called "website", config.yaml should look like this:
 ```
-website:
-  directory: /var/www
+access-key: <some string that you call the deploy script with>
+
+repositories:
+  website:
+    directory: /var/www
+    deploy: echo "Done"
 ```
